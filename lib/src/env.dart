@@ -1,9 +1,9 @@
 import 'dart:io';
 
 Map<String, String> readEnvFile({
-  required String envFilePath,
+  required String path,
 }) {
-  final envFile = File(envFilePath);
+  final envFile = File(path);
   final envFileContents = envFile //
       .readAsLinesSync()
       // Remove empty lines
