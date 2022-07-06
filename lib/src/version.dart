@@ -2,7 +2,10 @@ import 'dart:io';
 
 import 'package:pub_semver/pub_semver.dart';
 
-Future<Version> getFullVersion(File pubspecFile) async {
+Future<Version> getFullVersion({
+  required String pubspecFilePath,
+}) async {
+  final pubspecFile = File(pubspecFilePath);
   final pubspec = await pubspecFile.readAsString();
   final version = RegExp(
         r'^version:\s*(.*)$',
